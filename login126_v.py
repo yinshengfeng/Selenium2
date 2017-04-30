@@ -1,4 +1,6 @@
 # coding=utf-8
+from time import sleep
+
 from selenium import webdriver
 
 driver = webdriver.Chrome()
@@ -31,5 +33,6 @@ now_url = driver.current_url
 print(now_url)
 
 """获取登录的用户名"""
-text = driver.find_element_by_id("spnUid").text
+sleep(10)
+text = driver.find_element_by_css_selector("span#spnUid").get_attribute()
 print(text)
